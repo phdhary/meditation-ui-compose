@@ -1,9 +1,12 @@
 package com.phdhary.meditationui.ui
 
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
@@ -16,6 +19,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import com.phdhary.meditationui.Feature
 import com.phdhary.meditationui.R
 import com.phdhary.meditationui.ui.theme.*
 
@@ -136,4 +140,33 @@ fun CurrentMeditation(
             )
         }
     }
+}
+
+
+@ExperimentalFoundationApi
+@Composable
+fun FeatureSection(features: List<Feature>) {
+    Column(modifier = Modifier.fillMaxWidth()) {
+        Text(
+            text = "Features",
+            style = MaterialTheme.typography.h1,
+            modifier = Modifier.padding(15.dp)
+        )
+        LazyVerticalGrid(
+            cells = GridCells.Fixed(2),
+            contentPadding = PaddingValues(start = 7.5.dp, end = 7.5.dp, bottom = 100.dp),
+            modifier = Modifier.fillMaxHeight()
+        ) {
+            items(features.size){
+
+            }
+        }
+    }
+}
+
+@Composable
+fun FeatureItem(
+    feature: Feature
+) {
+
 }
