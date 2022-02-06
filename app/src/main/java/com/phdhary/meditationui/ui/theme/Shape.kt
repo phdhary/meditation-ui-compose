@@ -1,4 +1,4 @@
-package com.plcoding.meditationuiyoutube.ui.theme
+package com.phdhary.meditationui.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes
